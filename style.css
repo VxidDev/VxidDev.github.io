@@ -1,52 +1,84 @@
 body {
-    background: linear-gradient(to right , black , rgb(59, 59, 59));
+    background: black;
 }
 
-.heading-container {
+.header {
     display: flex;
     background: linear-gradient(to right , white , black);
-    width: 230px;
-    justify-content: center;
-    color: white;
-    font-family: monospace;
-    font-size: 20px;
-    border-radius: 20px;
-    margin-left: 20px;
-    box-shadow: -10px 5px 40px;
-    transform: scale(1.0);
-    transition: transform 0.2s ease-in-out;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    border-radius: 25px;
 }
 
-.heading-container:hover {
+.header-font {
+    font-family: monospace;
+    font-size: 50px;
+}
+
+.header-logo {
+    display: flex;
+}
+
+.void-plain-text {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.void-plain-text:hover {
     transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease;
 }
 
-.heading-dev{
-    font-size: 40px;
-    font-family: monospace;
+.dev-link {
     text-decoration: none;
-    font-weight: bold;
 
-    padding-top: 27px;
-
-    transform: scale(1.0);
-    transition: transform 0.2s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.2s ease;
 }
 
-.heading-void {
-    position: relative;
-    transform: scale(1.0);
-    transition: transform 0.2s ease-in-out;
-}
-
-.heading-void:hover {
+.dev-link:hover {
     transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
-    z-index: 10;
+    transition: transform 0.2s ease;
 }
 
-.heading-dev:hover {
+.redirect-header {
+    display: flex;
+    padding-top: 20px;
+}
+
+.header-link {
+    padding-left: 20px;
+    text-decoration: none;
+    font-size: 30px;
+
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.header-link:hover {
     transform: scale(1.2);
-    transition: transform 0.2s ease-in-out ;
+}
+
+.header-donations {
+    text-decoration: line-through;
+    color: rgb(145, 145, 145);
+}
+
+.project {
+    display: flex;
+    background: linear-gradient(to left, rgb(105, 105, 105) , white);
+    align-items: center;
+    margin-top: 45px;
+    border-radius: 25px;
+    padding-left: 25px;
+}
+
+.project-font {
+    font-family: monospace;
+    font-size: 25px;
+}
+
+.project-link {
+    text-decoration: none;
 }
