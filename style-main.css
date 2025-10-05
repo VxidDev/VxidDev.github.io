@@ -67,11 +67,21 @@ body {
 
 .project {
     display: flex;
-    background: linear-gradient(to left, rgb(105, 105, 105) , white);
+    background: linear-gradient(320deg, rgba(34, 34, 34) , white);
     align-items: center;
     margin-top: 45px;
     border-radius: 25px;
     padding-left: 25px;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 5px solid rgba(35 , 35 , 35 , 0.1);
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+}
+
+.project:hover {
+    transform: scale(1.0);
+    transition: transform 0.2s ease;
 }
 
 .project-font {
