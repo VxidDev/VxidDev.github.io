@@ -72,9 +72,6 @@ body {
     margin-top: 45px;
     border-radius: 25px;
     padding-left: 25px;
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(4.5px);
-    border: 5px solid rgba(35 , 35 , 35 , 0.1);
     transform: scale(0.9);
     transition: transform 0.2s ease;
 }
