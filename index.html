@@ -1,40 +1,547 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoidDev - Main Page</title>
-    <link rel="stylesheet" href="style-main.css">
+    <title>Stanislav Kolesnikov - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nord: {
+                            0: '#2e3440',
+                            1: '#3b4252',
+                            2: '#434c5e',
+                            3: '#4c566a',
+                            4: '#d8dee9',
+                            5: '#e5e9f0',
+                            6: '#eceff4',
+                            7: '#8fbcbb',
+                            8: '#88c0d0',
+                            9: '#81a1c1',
+                            10: '#5e81ac'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace'],
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="header header-font">
-        <div class="header-logo">
-            <span class="void-plain-text">Void</span>
-            <a href="https://github.com/VxidDev/" class="dev-link">Dev</a>
-            </div>
-        <div class="redirect-header">
-            <a class="header-link" href="about.html">About</a>
-            <a class="header-donations header-link">Donations</a>
+<body class="bg-nord-0 text-nord-6 font-sans antialiased selection:bg-nord-8/30 selection:text-nord-6">
+
+    <div class="fixed-bg"></div>
+
+    <section class="view-point text-center px-4">
+        <div class="max-w-6xl space-y-10">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-nord-6 sm:whitespace-nowrap">
+                Stanislav Kolesnikov
+            </h1>
+
+            <p class="font-mono text-xs text-nord-8 uppercase tracking-widest">
+                Open to python &amp; full-stack roles
+            </p>
+
+            <div class="w-24 h-[1px] bg-nord-8/40 mx-auto my-12"></div>
+            <p class="text-xl sm:text-2xl md:text-3xl font-light text-nord-4 max-w-4xl mx-auto leading-relaxed tracking-wide">
+                Engineering new languages, compiler pipelines, low-level systems and native environments.
+            </p>
         </div>
-    </div>
-    <li class="project project-font">
-        <p><a href="https://github.com/VxidDev/VoidFetch" class="project-link">VoidFetch</a> - A fetching
-        tool designed by linux user for linux users.</p>
-    </li>
-    <li class="project project-font">
-        <p><a href="https://github.com/VxidDev/eBay-Scraper" class="project-link">eBay Scraper</a> - A 
-        script that scrapes selected eBay page built with selenium.</p>
-    </li>
-    <li class="project project-font">
-        <p><a href="https://github.com/VxidDev/VCast" class="project-link">VCast</a> - Weather app.</p>
-    </li>
-    <li class="project project-font">
-        <p><a href="https://github.com/VxidDev/VoidPad" class="project-link">VoidPad</a> - Text editor
-        made with tkinter(planning to migrate to customtkinter). Fast,lightweight and customizable.</p>
-    </li>
-    <li class="project project-font">
-        <p><a href="https://github.com/VxidDev/VAsk" class="project-link">vAsk</a> - Python library
-        designed to replace 'input()' by adding features like 'force_int' or 'allowed_answers'.</p>
-    </li>
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-nord-6/30 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </section>
+
+    <section class="view-point lg:px-16 xl:px-24">
+        <div class="w-full max-w-5xl glass-panel rounded-2xl p-6 md:p-12 transition-all duration-300">
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-nord-6/10 pb-6">
+                    <div>
+                        <span class="font-mono text-xs text-nord-8 uppercase tracking-widest block mb-2">// HIGH PERFORMANCE PIPELINES // COMPILER DEV</span>
+                        <h2 class="text-3xl md:text-5xl font-light tracking-tight text-nord-6">01 // ARC</h2>
+                    </div>
+                    <div class="flex items-center gap-6 font-mono text-sm">
+                        <span class="text-nord-8 font-medium">10 ★</span>
+                        <button onclick="toggleAbstract('arc-spec')" class="px-5 py-2.5 bg-nord-8/10 text-nord-8 rounded border border-nord-8/20 hover:bg-nord-8/20 transition-all uppercase tracking-widest text-xs font-semibold">
+                            Language Specs
+                        </button>
+                    </div>
+                </div>
+                <p class="text-lg md:text-xl font-light text-nord-4 leading-relaxed tracking-wide">
+                    Arc is a lightweight programming language written in C, featuring a custom lexer, parser, and interpreter.
+                    It supports variables, functions, control flow, and a minimal standard library.
+                </p>
+            </div>
+
+            <div id="arc-spec" class="abstract-drawer">
+                <div class="bg-nord-1/50 rounded-xl border border-nord-6/5 p-6 space-y-6 text-sm text-nord-4 leading-relaxed font-light">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2 mb-2">Case Sensitivity Matrix</h4>
+                            <p class="mb-2"><strong class="text-nord-5">Keywords are Case-Insensitive:</strong> Control frameworks like <code class="font-mono text-nord-7">VAR</code>, <code class="font-mono text-nord-7">FN</code>, <code class="font-mono text-nord-7">IF</code>, <code class="font-mono text-nord-7">WHILE</code>, <code class="font-mono text-nord-7">TRY</code>, and <code class="font-mono text-nord-7">RETURN</code> accept any matching casing standard dynamically.</p>
+                            <p><strong class="text-nord-5">Identifiers are Case-Sensitive</strong>(<code class="font-mono text-nord-9">myVariable</code> and <code class="font-mono text-nord-9">myvariable</code> are separate instances).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2 mb-2">Native Literal Evaluation</h4>
+                            <ul class="space-y-2">
+                                <li><strong class="text-nord-5">Numbers:</strong> Maps both raw Integer values and IEEE floating-point designations.</li>
+                                <li>
+                                    <strong class="text-nord-5">Booleans:</strong>
+                                    Truthiness is evaluated via <code class="font-mono text-nord-7">isTruthy(Value v)</code>.
+                                    Integers and floats evaluate false when equal to <code class="font-mono text-nord-7">0</code> or <code class="font-mono text-nord-7">0.0</code>.
+                                    <code class="font-mono text-nord-7">null</code> is also false.
+                                    Objects are truthy except:
+                                    empty strings and empty lists.
+                                </li>
+                                <li><strong class="text-nord-5">Strings:</strong> Immutable character sequences contained inside standard double quotes.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2 mb-2">Object System & Explicit Contexts</h4>
+                        <p class="mb-2">Classes are built utilizing the <code class="font-mono text-nord-7">CLASS</code> keyword. Methods skip hidden structural context binding overlays - meaning instances have to get fed explicitly through the argument frame to process scope modifications.</p>
+                        <pre class="font-mono text-xs text-nord-8 bg-nord-0/90 p-4 rounded-lg overflow-x-auto border border-nord-3/40">CLASS Entity
+    VAR field = "abc"
+    FN func(instance, updatedValue) THEN
+        instance.field = updatedValue
+    END
+END
+
+VAR actor = Entity()
+actor.func(actor, "new_state")</pre>
+                    </div>
+
+                    <div>
+                        <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2 mb-2">Low-Level VM Pipeline Architecture</h4>
+                        <ol class="space-y-2 list-decimal list-inside text-xs">
+                            <li><strong class="text-nord-5">Lexical Stream:</strong> <code class="font-mono">src/lexer.c</code> parses source inputs into distinct structures.</li>
+                            <li><strong class="text-nord-5">Recursive Descent Tree:</strong> <code class="font-mono">src/parser.c</code> produces a optimized ASTNode tree.</li>
+                            <li><strong class="text-nord-5">Bytecode Emission:</strong> <code class="font-mono">src/compiler.c</code> targets memory arrays called Chunks while resolving variable scopes.</li>
+                            <li><strong class="text-nord-5">Labels-as-Values Loop:</strong> <code class="font-mono">src/vm.c</code> runs instructions through an optimized stack framework utilizing computed gotos.</li>
+                        </ol>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+                        <div class="bg-nord-0/40 p-3 rounded border border-nord-3/20">
+                            <h5 class="font-medium text-nord-5 mb-1">Memory Arena Allocation</h5>
+                            <p class="text-nord-4">Leverages <code class="font-mono">src/memarena.c</code> for persistent AST phases alongside custom recycling pools in <code class="font-mono">src/mempool.c</code> to reduce structural overhead.</p>
+                        </div>
+                        <div class="bg-nord-0/40 p-3 rounded border border-nord-3/20">
+                            <h5 class="font-medium text-nord-5 mb-1">Standard I/O Array</h5>
+                            <p class="text-nord-4">Natively provisions operations such as <code class="font-mono">print()</code>, <code class="font-mono">len_of()</code>, and math files like <code class="font-mono">math.arc</code> via explicit runtime inclusions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs text-nord-4 border-t border-nord-6/5 mt-6 pt-6">
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">C Language</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Compiler Design</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Bytecode VM</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Interpreter</span>
+
+                <a href="https://github.com/VxidDev/Arc"
+                    target="_blank"
+                    class="ml-2 text-nord-8 hover:text-nord-6 text-base underline-offset-4 transition">
+
+                    Check Out →
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="view-point lg:px-16 xl:px-24">
+        <div class="w-full max-w-5xl glass-panel rounded-2xl p-6 md:p-12 transition-all duration-300">
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-nord-6/10 pb-6">
+                    <div>
+                        <span class="font-mono text-sm text-nord-8 uppercase tracking-widest block mb-2">// NETWORKING ECOSYSTEMS // CORE ASGI</span>
+                        <h2 class="text-3xl md:text-5xl font-light tracking-tight text-nord-6">02 // NEBULA</h2>
+                    </div>
+                    <div class="flex items-center gap-6 font-mono text-sm">
+                        <span class="text-nord-8 font-medium">9 ★</span>
+                        <button onclick="toggleAbstract('nebula-spec')" class="px-5 py-2.5 bg-nord-8/10 text-nord-8 rounded border border-nord-8/20 hover:bg-nord-8/20 transition-all uppercase tracking-widest text-xs font-semibold">
+                            Blueprint Code
+                        </button>
+                    </div>
+                </div>
+                <p class="text-lg md:text-xl font-light text-nord-4 leading-relaxed tracking-wide">
+                    An asynchronous Python web routing engine built completely over native ASGI. Designed from the bottom up to serve direct data-streaming microservices without introducing the bloat and middleware overhead.
+                </p>
+            </div>
+
+            <div id="nebula-spec" class="abstract-drawer">
+                <div class="bg-nord-1/50 rounded-xl border border-nord-6/5 p-6 space-y-4 text-sm text-nord-4 font-light">
+                    <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2">// PARALLEL EVENT LOOPS & ARCHITECTURE</h4>
+                    <p>
+                        Nebula sidesteps complex multithreading frameworks by executing over standardized state events. It provides micro-routers with flat lookups, achieving predictable throughput for real-time web applications.
+                    </p>
+                    <pre class="font-mono text-xs text-nord-8 bg-nord-0/90 p-4 rounded-lg overflow-x-auto border border-nord-3/40 leading-relaxed">from nebula import Nebula, run_prod
+
+app = Nebula("127.0.0.1", 5000)
+
+@app.get("/")
+async def home():
+    return {"status": "routing_active", "engine": "nebula_core"}
+
+if __name__ == "__main__":
+    run_prod(app, workers=4, access_log=False)</pre>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs text-nord-4 border-t border-nord-6/5 mt-6 pt-6">
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Python</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">ASGI Framework</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Async Web Server</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Web</span>
+
+                <a href="https://github.com/VxidDev/nebula"
+                    target="_blank"
+                    class="ml-2 text-nord-8 hover:text-nord-6 text-base underline-offset-4 transition">
+                    
+                    Check Out →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="view-point lg:px-16 xl:px-24">
+        <div class="w-full max-w-5xl glass-panel rounded-2xl p-6 md:p-12 transition-all duration-300">
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-nord-6/10 pb-6">
+                    <div>
+                        <span class="font-mono text-sm text-nord-8 uppercase tracking-widest block mb-2">// BARE METAL ASSEMBLY // LOW LEVEL RESCUE</span>
+                        <h2 class="text-3xl md:text-5xl font-light tracking-tight text-nord-6">03 // ARCOS</h2>
+                    </div>
+                    <div class="flex items-center gap-6 font-mono text-sm">
+                        <span class="text-nord-8 font-medium">4 ★</span>
+                        <button onclick="toggleAbstract('arcos-spec')" class="px-5 py-2.5 bg-nord-8/10 text-nord-8 rounded border border-nord-8/20 hover:bg-nord-8/20 transition-all uppercase tracking-widest text-xs font-semibold">
+                            Syscall Interface
+                        </button>
+                    </div>
+                </div>
+                <p class="text-lg md:text-xl font-light text-nord-4 leading-relaxed tracking-wide">
+                    A lightweight, real-mode 16-bit operating system written entirely in x86 Assembly. Features a multi-stage sector bootloader, native console shell interfaces, and low-level interrupt hooks communicating directly with hardware.
+                </p>
+            </div>
+
+            <div id="arcos-spec" class="abstract-drawer">
+                <div class="bg-nord-1/50 rounded-xl border border-nord-6/5 p-6 space-y-6 text-sm text-nord-4 font-light">
+                    <div>
+                        <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2 mb-2">Interrupt 0x80 Register Interface</h4>
+                        <p class="mb-3">Programs communicate with the underlying kernel by preloading explicit identifiers inside the <code class="font-mono text-nord-7">ah</code> register block before issuing interrupt calls:</p>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full font-mono text-xs text-left text-nord-4 border border-nord-3/40">
+                                <thead class="bg-nord-0/50 text-nord-5">
+                                    <tr>
+                                        <th class="p-2 border border-nord-3/40">Syscall Tag</th>
+                                        <th class="p-2 border border-nord-3/40">AH Op</th>
+                                        <th class="p-2 border border-nord-3/40">Parameters</th>
+                                        <th class="p-2 border border-nord-3/40">Functional Objective</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-nord-3/20">
+                                        <td class="p-2 font-semibold text-nord-8">sys_print_char</td>
+                                        <td class="p-2">0x00</td>
+                                        <td class="p-2">al = character byte</td>
+                                        <td class="p-2">Writes an individual token directly to the screen view.</td>
+                                    </tr>
+                                    <tr class="border-b border-nord-3/20">
+                                        <td class="p-2 font-semibold text-nord-8">sys_print_string</td>
+                                        <td class="p-2">0x01</td>
+                                        <td class="p-2">si = pointer reference</td>
+                                        <td class="p-2">Processes null-terminated text streams to terminal screens.</td>
+                                    </tr>
+                                    <tr class="border-b border-nord-3/20">
+                                        <td class="p-2 font-semibold text-nord-8">sys_print_newline</td>
+                                        <td class="p-2">0x02</td>
+                                        <td class="p-2">None</td>
+                                        <td class="p-2">Moves cursor to new line.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-semibold text-nord-8">sys_shutdown</td>
+                                        <td class="p-2">0xA0</td>
+                                        <td class="p-2">None</td>
+                                        <td class="p-2">Signals APM parameters to shut down system operations.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2 mb-2">Integrating Custom Assembly Extensions</h4>
+                        <p class="mb-2">Adding custom utilities involves building targeted instruction sets inside the program registry before wiring them into the system layout checks.</p>
+                        <pre class="font-mono text-xs text-nord-8 bg-nord-0/90 p-4 rounded-lg overflow-x-auto border border-nord-3/40">; target logic written inside progs/custom_print.s
+user_extension_entry:
+    mov si, display_message_pointer
+    mov bl, 0x0F  ; Light white text attributes
+    call print_string_utility
+    ret
+display_message_pointer: db "Custom User Vector Triggered.", 0</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs text-nord-4 border-t border-nord-6/5 mt-6 pt-6">
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">NASM Assembly</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Operating System</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">x86 Real Mode</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Low-Level Systems</span>
+                
+                <a href="https://github.com/VxidDev/arcos"
+                    target="_blank"
+                    class="ml-2 text-nord-8 hover:text-nord-6 text-base underline-offset-4 transition">
+                    
+                    Check Out →
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="view-point lg:px-16 xl:px-24">
+        <div class="w-full max-w-5xl glass-panel rounded-2xl p-6 md:p-12 transition-all duration-300">
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-nord-6/10 pb-6">
+                    <div>
+                        <span class="font-mono text-sm text-nord-8 uppercase tracking-widest block mb-2">// INTUITIVE AI INTERFACES // FULL-STACK EDTECH</span>
+                        <h2 class="text-3xl md:text-5xl font-light tracking-tight text-nord-6">04 // EDUDUCK</h2>
+                    </div>
+                    <div class="flex items-center gap-6 font-mono text-sm">
+                        <span class="text-nord-8 font-medium">6 ★</span>
+                        <button onclick="toggleAbstract('eduduck-spec')" class="px-5 py-2.5 bg-nord-8/10 text-nord-8 rounded border border-nord-8/20 hover:bg-nord-8/20 transition-all uppercase tracking-widest text-xs font-semibold">
+                            System Blueprint
+                        </button>
+                    </div>
+                </div>
+                <p class="text-lg md:text-xl font-light text-nord-4 leading-relaxed tracking-wide">
+                    An AI-assisted study companion application that transforms handwritten logs and document streams into customizable training tools. Features automated quiz generators, summaries, and OCR for PDFs and images.
+                </p>
+            </div>
+
+            <div id="eduduck-spec" class="abstract-drawer">
+                <div class="bg-nord-1/50 rounded-xl border border-nord-6/5 p-6 space-y-4 text-sm text-nord-4 font-light">
+                    <h4 class="font-mono text-xs text-nord-8 uppercase tracking-wider border-b border-nord-6/5 pb-2">// APPARATUS & COMPONENT SPECS</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-nord-0/30 p-3 rounded border border-nord-3/20">
+                            <span class="block text-nord-8 font-semibold mb-1">Document Ingestion</span>
+                            <p class="text-xs">Transforms inputs (including TXT, PDF, and image text extractions) into formatted reference frameworks via OCR preprocessing layers.</p>
+                        </div>
+                        <div class="bg-nord-0/30 p-3 rounded border border-nord-3/20">
+                            <span class="block text-nord-8 font-semibold mb-1">Intelligent Schedule Generators</span>
+                            <p class="text-xs">Maps dynamically updating study outlines by analyzing target timelines, specific files, and personal learning preferences.</p>
+                        </div>
+                        <div class="bg-nord-0/30 p-3 rounded border border-nord-3/20">
+                            <span class="block text-nord-8 font-semibold mb-1">DuckAI Interaction Core</span>
+                            <p class="text-xs">Maintains persistent message contextual tracking, giving users the power to converse with files and query complex technical configurations.</p>
+                        </div>
+                        <div class="bg-nord-0/30 p-3 rounded border border-nord-3/20">
+                            <span class="block text-nord-8 font-semibold mb-1">Auth & Localization</span>
+                            <p class="text-xs">Google OAuth authentication with multi-language user interface support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs text-nord-4 border-t border-nord-6/5 mt-6 pt-6">
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Python</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">AI Application</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">OCR Pipeline</span>
+                <span class="px-4 py-2 bg-nord-1/60 rounded-lg border border-nord-3/40">Full-Stack App</span>
+
+                <a href="https://github.com/VxidDev/eduduck"
+                    target="_blank"
+                    class="ml-2 text-nord-8 hover:text-nord-6 text-base underline-offset-4 transition">
+                    
+                    Check Out →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="view-point lg:px-16 xl:px-24">
+        <div class="w-full max-w-7xl glass-panel rounded-2xl p-6 md:p-12 space-y-10">
+            <div>
+                <h3 class="font-mono text-xs font-semibold text-[#88c0d0] uppercase tracking-widest mb-6">// PRODUCTION RUNTIME PERFORMANCE TELEMETRY</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-[#242933]/60 rounded-xl p-6 border border-[#eceff4]/[0.04] space-y-4">
+                        <div class="font-mono text-xs text-[#4c566a] flex justify-between border-b border-[#eceff4]/[0.05] pb-2">
+                            <span>HTTP BENCHMARK // wrk -t4 -c900 -d30</span>
+                            <span>NEBULA CORE</span>
+                        </div>
+                        <pre class="font-mono text-[11px] text-[#d8dee9]/90 overflow-x-auto leading-relaxed select-all">Running 30s test @ http://127.0.0.1:5000
+  4 threads and 900 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.72ms   35.79ms   1.16s    99.40%
+    Req/Sec    12.18k     1.18k   16.08k    69.92%
+  1455071 requests in 30.05s, 194.27MB read
+Requests/sec:  48418.20
+Transfer/sec:      6.46MB</pre>
+                    </div>
+
+                    <div class="bg-[#242933]/60 rounded-xl p-6 border border-[#eceff4]/[0.04] space-y-4">
+                        <div class="font-mono text-xs text-[#4c566a] flex justify-between border-b border-[#eceff4]/[0.05] pb-2">
+                            <span>ARC VS CPYTHON BENCHMARK</span>
+                            <span>COMPILER METRICS</span>
+                        </div>
+                        <pre class="font-mono text-[11px] text-[#d8dee9]/90 overflow-x-auto leading-relaxed select-all">
+single-threaded, warm cache, best of 5 runs
+
+Fibonacci (recursive, n=30)     | Arc faster (~1.49x)
+Fibonacci (iterative, n=1000)   | Arc faster (~2.38x)
+Sum 1..1,000,000                | Arc faster (~2.47x)
+String concat (x10,000)         | Python faster (~4.34x)
+List build (x1,000)             | Python faster (~1.25x)
+Nested loops (1000x1000)        | Arc faster (~1.96x)
+Recursive countdown (5000)      | Arc faster (~2.14x)
+Variable churn (x100,000)       | Arc faster (~2.19x)
+
+Arc wins 6/8 benchmarks
+</pre>
+                    </div>
+                </div>
+
+                <h3 class="font-mono text-xs font-semibold text-[#88c0d0] uppercase tracking-widest mb-6"><br> // DAILY DRIVERS</h3>
+
+                <div class="mt-8 bg-[#242933]/40 rounded-xl p-6 border border-[#eceff4]/[0.03] flex flex-col md:flex-row items-center gap-6">
+                    <pre class="font-mono text-[10px] text-[#88c0d0] leading-none select-none hidden md:block">
+                   -`
+                 .o+`
+                `ooo/       
+               `+oooo:         
+              `+oooooo:           
+              -+oooooo+:            
+            `/:-:++oooo+:       
+           `/++++/+++++++:         
+          `/++++++++++++++:         
+         `/+++ooooooooooooo/`      
+        ./ooosssso++osssssso+`         
+       .oossssso-````/ossssss+`    
+      -osssssso.      :ssssssso.     
+     :osssssss/        osssso+++.    
+    /ossssssss/        +ssssooo/-     
+  `/ossssso+/:-        -:/+osssso+-   
+ `+sso+:-`                 `.-/+oso: 
+`++:.                           `-/+/  
+.`                                 `/  
+                    </pre>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2 font-mono text-[11px] text-[#d8dee9]/70 w-full">
+                        <div><span class="text-[#88c0d0]">OS:</span> Arch Linux x86_64</div>
+                        <div><span class="text-[#88c0d0]">Host:</span> ASUS TUF Gaming F15</div>
+                        <div><span class="text-[#88c0d0]">Kernel:</span> Linux 7.0.12-arch1-1</div>
+
+                        <div><span class="text-[#88c0d0]">Uptime:</span> 3h 49m</div>
+                        <div><span class="text-[#88c0d0]">Packages:</span> 1081 (pacman)</div>
+                        <div><span class="text-[#88c0d0]">Shell:</span> zsh 5.9.1</div>
+
+                        <div><span class="text-[#88c0d0]">Display:</span> 1920x1080 @ 144Hz</div>
+                        <div><span class="text-[#88c0d0]">WM:</span> Hyprland (Wayland)</div>
+                        <div><span class="text-[#88c0d0]">Terminal:</span> kitty 0.47.1</div>
+
+                        <div><span class="text-[#88c0d0]">CPU:</span> i5-10300H (8 threads)</div>
+                        <div><span class="text-[#88c0d0]">GPU:</span> GTX 1650 + Intel UHD</div>
+                        <div><span class="text-[#88c0d0]">Memory:</span> 9.76 / 15.45 GiB</div>
+
+                        <div><span class="text-[#88c0d0]">Swap:</span> 1.15 / 7.73 GiB</div>
+                        <div><span class="text-[#88c0d0]">Disk:</span> 126.77 / 197.92 GiB</div>
+                        <div><span class="text-[#88c0d0]">Battery:</span> 100% (AC)</div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="mt-8 bg-[#242933]/40 rounded-xl p-6 border border-[#eceff4]/[0.03] flex flex-col md:flex-row items-center gap-6">
+
+    <!-- ASCII LOGO -->
+    <pre class="font-mono text-[10px] text-[#88c0d0] leading-none select-none hidden md:block">
+      ▗▄▄▄         ▗▄▄▄▄    ▄▄▄▖
+      ▜███▙         ▜███▙  ▟███▛         
+       ▜███▙         ▜███▙▟███▛             
+        ▜███▙         ▜██████▛             
+   ▟█████████████████▙ ▜████▛      ▟▙ 
+  ▟███████████████████▙ ▜███▙     ▟██▙ 
+           ▄▄▄▄▖         ▜███▙   ▟███▛ 
+          ▟███▛           ▜██▛  ▟███▛ 
+         ▟███▛             ▜▛  ▟███▛   
+▟███████████▛                 ▟██████████▙ 
+▜██████████▛                 ▟███████████▛ 
+      ▟███▛ ▟▙               ▟███▛      
+     ▟███▛ ▟██▙             ▟███▛      
+    ▟███▛  ▜███▙           ▝▀▀▀▀         
+    ▜██▛    ▜███▙ ▜██████████████████▛   
+     ▜▛     ▟████▙ ▜████████████████▛    
+           ▟██████▙       ▜███▙         
+          ▟███▛▜███▙       ▜███▙     
+         ▟███▛  ▜███▙       ▜███▙      
+         ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
+    </pre>
+
+                <!-- SYSTEM INFO GRID -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2 font-mono text-[11px] text-[#d8dee9]/70 w-full">
+
+                    <div><span class="text-[#88c0d0]">OS:</span> NixOS 25.11 (Xantusia)</div>
+                    <div><span class="text-[#88c0d0]">Host:</span> ThinkPad L460</div>
+                    <div><span class="text-[#88c0d0]">Kernel:</span> Linux 7.0.9-zen1</div>
+
+                    <div><span class="text-[#88c0d0]">Uptime:</span> 2h 31m</div>
+                    <div><span class="text-[#88c0d0]">Packages:</span> 1230 (nix-system)</div>
+                    <div><span class="text-[#88c0d0]">Shell:</span> zsh 5.9</div>
+
+                    <div><span class="text-[#88c0d0]">Display:</span> 1920x1080 @ 60Hz</div>
+                    <div><span class="text-[#88c0d0]">DE/WM:</span> i3 (X11)</div>
+                    <div><span class="text-[#88c0d0]">Terminal:</span> kitty 0.44.0</div>
+
+                    <div><span class="text-[#88c0d0]">CPU:</span> i5-6200U (4 threads)</div>
+                    <div><span class="text-[#88c0d0]">GPU:</span> Intel HD Graphics 520</div>
+                    <div><span class="text-[#88c0d0]">Memory:</span> 1.60 / 7.63 GiB</div>
+
+                    <div><span class="text-[#88c0d0]">Swap:</span> 0 / 12.61 GiB</div>
+                    <div><span class="text-[#88c0d0]">Disk:</span> 17.04 / 209.35 GiB</div>
+                    <div><span class="text-[#88c0d0]">Battery:</span> 77% (AC)</div>
+
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <section class="view-point min-h-[45vh] flex flex-col justify-between py-10">
+        <div></div>
+        <div class="w-full max-w-4xl text-center space-y-6">
+            <span class="font-mono text-xs text-nord-8 uppercase tracking-widest block mb-2">// GET IN TOUCH</span>
+            <p class="text-lg font-light text-nord-4 leading-relaxed">
+                Have a project in mind or want to collaborate? Reach out.
+            </p>
+            <div class="w-24 h-[1px] bg-nord-8/40 mx-auto my-6"></div>
+            <div class="flex justify-center gap-16 font-mono text-sm tracking-widest">
+                <a href="https://github.com/VxidDev" target="_blank" rel="noopener" class="text-[#d8dee9]/60 hover:text-[#88c0d0] transition-colors">
+                    GITHUB
+                </a>
+                <a href="mailto:stas050595@gmail.com" class="text-[#d8dee9]/60 hover:text-[#88c0d0] transition-colors">
+                    EMAIL
+                </a>
+            </div>
+        </div>
+
+        <div class="w-full text-center text-sm text-[#4c566a] font-light tracking-wide pt-10">
+            &copy; Stanislav Kolesnikov 2026
+        </div>
+    </section>
 </body>
 </html>
